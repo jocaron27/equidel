@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from '../../styled';
 
 function NotFound() {
     return (
-        <div className="not-found">
+        <Box>
             404 not found
-        </div>
+        </Box>
     );
 };
 

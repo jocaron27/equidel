@@ -1,11 +1,16 @@
 import React from 'react';
-import { Menu } from '../menu';
+import { FooterContainer } from './footerStyledComponents';
+import { useMediaQuery } from '../../hooks';
+import { Text, cardProps } from '../styled';
 
 function Footer() {
+    const { isDesktop } = useMediaQuery();
+    const footerContainerPadding = isDesktop ? [5, 8] : [2];
+
     return (
-        <div className="footer">
-            <Menu />
-        </div>
+        <FooterContainer $variant={cardProps.variant.background} $p={footerContainerPadding}>
+            <Text>Footer</Text>
+        </FooterContainer>
     );
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Box, Button, TextSmall, variantProps } from '../styled';
+import { Icon } from '@mui/material';
 
 function MenuItem({name, path, icon, callback}) {
     const navigate = useNavigate();
@@ -14,15 +16,17 @@ function MenuItem({name, path, icon, callback}) {
     };
 
     return (
-        <button className={menuItemContainerClassName} onClick={() => handleMenuItemClick(path)}>
-            <span className="material-icons menu-item-icon">
+        <Button $variant={variantProps.secondary} className={menuItemContainerClassName} onClick={() => handleMenuItemClick(path)}>
+            <Icon>
                 {icon}
-            </span>
+            </Icon>
 
-            <div className="menu-item-text">
-                {name}
-            </div>
-        </button>
+            <Box>
+                <TextSmall>
+                    {name}
+                </TextSmall>
+            </Box>
+        </Button>
     );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { menuRoutes } from '../../routes/routesConsts';
 import MenuItem from './menuItem';
+import { FlexBox } from '../styled';
 
 function Menu() {
     const renderMenuItems = menuRoutes.map(({ name, path, icon }, idx) => (
@@ -8,9 +9,9 @@ function Menu() {
     ));
 
     return (
-        <div className="menu-container">
+        <FlexBox>
             {renderMenuItems}
-        </div>
+        </FlexBox>
     );
 };
 

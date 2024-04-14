@@ -9,7 +9,7 @@ import "@fontsource/playfair-display-sc";
 import "@fontsource/cormorant-garamond";
 import "@fontsource/abel";
 import 'material-icons/iconfont/material-icons.css';
-import './theme/theme.css';
+import { Box } from './components/styled';
 
 function App() {
     const { fetchData } = useContext(DataContext);
@@ -19,16 +19,11 @@ function App() {
     }, []);
 
     return (
-        <div className="app">
-            <div className="inner-wrapper">
-                <Header />
-                
-                <div className="main-wrapper">
-                    <MainRoutes />
-                </div>
-            </div>
+        <Box>
+            <Header />
+            <MainRoutes />
             <Footer />
-        </div>
+        </Box>
     );
 };
 
