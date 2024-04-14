@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { DataContext } from '../../../context';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import { Box, Button, Card, Text } from '../../styled';
 
 function Portfolio() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -12,23 +13,27 @@ function Portfolio() {
     };
 
     return (
-        <div className="portfolio">
+        <Box>
+            <Box>
+                <Text>
+                    Portfolio
+                </Text>
+            </Box>
+
             <Modal
 				open={modalOpen}
                 onClose={toggleModal}
-                center 
-                classNames={{
-                    overlay: 'video-modal-overlay',
-                    modal: 'video-modal'
-                }}
+                center
 			>
-                <div className="modal-bg">
-                    {JSON.stringify(data)}
-                </div>
+                <Card>
+                    <Box>
+                        {JSON.stringify(data)}
+                    </Box>
+                </Card>
             </Modal>
 
-            <button onClick={toggleModal}>Open Modal To See Data</button>
-        </div>
+            <Button onClick={toggleModal}>Open Modal To See Data</Button>
+        </Box>
     );
 };
 

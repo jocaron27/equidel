@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from '../../styled';
 
 function PitchDeck() {
     return (
-        <div className="pitch-deck">
+        <Box>
             <p>PitchDeck</p>
-        </div>
+        </Box>
     );
 };
 

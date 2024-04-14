@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from '../../styled';
 
 function Donate() {
     return (
-        <div className="donate">
+        <Box>
             <p>Donate</p>
-        </div>
+        </Box>
     );
 };
 

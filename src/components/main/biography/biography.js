@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from '../../styled';
 
 function Biography() {
     return (
-        <div className="biography">
+        <Box>
             <p>Biography</p>
-        </div>
+        </Box>
     );
 };
 
