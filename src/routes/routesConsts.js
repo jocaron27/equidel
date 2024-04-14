@@ -36,13 +36,15 @@ const menuRoutes = [
     },
 ];
 
+const notFoundRoute = {
+  id: 5,
+  name: 'Not Found',
+  path: '*',
+  Element: NotFound
+};
+
 const generalRoutes = [
-    {
-        id: 5,
-        name: 'Not Found',
-        path: '*',
-        Element: NotFound
-    }
+  notFoundRoute,
 ];
 
 const protectedRoutes = [
@@ -52,7 +54,8 @@ const initialDocumentTitle = `App Boilerplate`;
 
 export {
     menuRoutes,
+    notFoundRoute,
     generalRoutes,
     protectedRoutes,
-    initialDocumentTitle
+    initialDocumentTitle,
 };
