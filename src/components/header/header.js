@@ -8,8 +8,8 @@ function Header() {
 
     return (
         <div className="header">
-            <h1 className="header-name">Header Title</h1>
-            <h4 className="header-role">Header Subtext</h4>
+            <h1 className="header-name">Equidel Art</h1>
+            <h4 className="header-role">by Robert Caron</h4>
             <h5 className="middle-line-text">{pageTitle}</h5>
             <div className="middle-line"></div>
         </div>

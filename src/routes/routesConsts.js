@@ -1,38 +1,30 @@
-import { Portfolio } from '../components/main/portfolio';
-import { PitchDeck } from '../components/main/pitchDeck';
-import { Donate } from '../components/main/donate';
-import { Biography } from '../components/main/biography';
+import { Gallery } from '../components/main/gallery';
+import { Contact } from '../components/main/contact';
+import { About } from '../components/main/about';
 import { NotFound } from '../components/main/notFound';
 
 //Maintain ID's
 const menuRoutes = [
     {
         id: 1,
-        name: 'Works',
+        name: 'Gallery',
         path: '/',
-        icon: 'slideshow',
-        Element: Portfolio
+        icon: 'view_quilt',
+        Element: Gallery
     },
     {
         id: 2,
-        name: 'Pitch',
-        path: '/pitch-deck',
-        icon: 'queue_play_next',
-        Element: PitchDeck
+        name: 'Contact',
+        path: '/contact',
+        icon: 'call',
+        Element: Contact
     },
     {
         id: 3,
-        name: 'Donate',
-        path: '/donate',
-        icon: 'assist_walker',
-        Element: Donate
-    },
-    {
-        id: 4,
         name: 'About',
-        path: '/biography',
+        path: '/about',
         icon: 'person',
-        Element: Biography
+        Element: About
     },
 ];
 
@@ -48,7 +40,7 @@ const generalRoutes = [
 const protectedRoutes = [
 ];
 
-const initialDocumentTitle = `App Boilerplate`;
+const initialDocumentTitle = `Equidel Art`;
 
 export {
     menuRoutes,
