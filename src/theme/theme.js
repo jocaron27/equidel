@@ -63,7 +63,8 @@ const theme = createTheme({
             error: "#fff",
             info: "#fff",
             background: "#2d3240",
-            backgroundLight: "#2d3240"
+            backgroundLight: "#2d3240",
+            link: "#8f65d8"
         },
     },
     typography: {

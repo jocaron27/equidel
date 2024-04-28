@@ -19,7 +19,7 @@ function Footer() {
             <Title>Reach out</Title>
             <Title>to me</Title>
 
-            <FooterMenuContainer $itemsPerRow={3}>
+            <FooterMenuContainer $itemsPerRow={3} $p={[10, 0, 0, 0]}>
                 <FlexBoxColumn>
                     <TitleSmall>Email</TitleSmall>
                     <Anchor href="mailto:equidelart@gmail.com">
@@ -56,6 +56,10 @@ function Footer() {
                     </Box>
                 </SocialIconContainer>
             </FooterMenuContainer>
+
+            <FlexBox $center $p={[20, 0, 0, 0]}>
+              <Text>©2020 by Equidel Art</Text>
+            </FlexBox>
         </FooterContainer>
     );
 };

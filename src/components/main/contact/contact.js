@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box } from '../../styled';
 
-function PitchDeck() {
+function Contact() {
     return (
         <Box>
-            <p>PitchDeck</p>
+            <p>Contact</p>
         </Box>
     );
 };
 
-export default PitchDeck;
+export default Contact;
