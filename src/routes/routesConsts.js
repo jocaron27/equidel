@@ -1,43 +1,32 @@
 import { Portfolio } from '../components/main/portfolio';
-import { PitchDeck } from '../components/main/pitchDeck';
-import { Donate } from '../components/main/donate';
-import { Biography } from '../components/main/biography';
+import { About } from '../components/main/about';
+import { Contact } from '../components/main/contact';
 import { NotFound } from '../components/main/notFound';
 
 //Maintain ID's
 const menuRoutes = [
     {
         id: 1,
-        name: 'Works',
+        name: 'Gallery',
         path: '/',
-        icon: 'slideshow',
         Element: Portfolio
     },
     {
         id: 2,
-        name: 'Pitch',
-        path: '/pitch-deck',
-        icon: 'queue_play_next',
-        Element: PitchDeck
+        name: 'About',
+        path: '/about',
+        Element: About
     },
     {
         id: 3,
-        name: 'Donate',
-        path: '/donate',
-        icon: 'assist_walker',
-        Element: Donate
-    },
-    {
-        id: 4,
-        name: 'About',
-        path: '/biography',
-        icon: 'person',
-        Element: Biography
+        name: 'Contact',
+        path: '/contact',
+        Element: Contact
     },
 ];
 
 const notFoundRoute = {
-  id: 5,
+  id: 0,
   name: 'Not Found',
   path: '*',
   Element: NotFound
@@ -50,7 +39,7 @@ const generalRoutes = [
 const protectedRoutes = [
 ];
 
-const initialDocumentTitle = `App Boilerplate`;
+const initialDocumentTitle = `Equidel Art`;
 
 export {
     menuRoutes,

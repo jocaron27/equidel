@@ -4,7 +4,7 @@ import { Box } from '../../styled';
 function NotFound() {
     return (
         <Box>
-            404 not found
+            Oops, looks like you might have the wrong link
         </Box>
     );
 };
