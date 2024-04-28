@@ -1,17 +1,17 @@
 import React from 'react';
 import { menuRoutes } from '../../routes/routesConsts';
 import MenuItem from './menuItem';
-import { FlexBox } from '../styled';
+import { MenuContainer } from './menuStyledComponents';
 
 function Menu() {
-    const renderMenuItems = menuRoutes.map(({ name, path, icon }, idx) => (
-        <MenuItem key={idx} name={name} path={path} icon={icon} />
+    const renderMenuItems = menuRoutes.map(({ name, path }, idx) => (
+        <MenuItem key={idx} name={name} path={path} />
     ));
 
     return (
-        <FlexBox>
+        <MenuContainer>
             {renderMenuItems}
-        </FlexBox>
+        </MenuContainer>
     );
 };
 

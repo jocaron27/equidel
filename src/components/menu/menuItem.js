@@ -1,9 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Box, Button, TextSmall, variantProps } from '../styled';
-import { Icon } from '@mui/material';
+import { Box, SemanticButton, TextSmall, variantProps } from '../styled';
 
-function MenuItem({name, path, icon, callback}) {
+function MenuItem({name, path, callback}) {
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const isActive = pathname === path;
@@ -16,17 +15,13 @@ function MenuItem({name, path, icon, callback}) {
     };
 
     return (
-        <Button $variant={variantProps.secondary} className={menuItemContainerClassName} onClick={() => handleMenuItemClick(path)}>
-            <Icon>
-                {icon}
-            </Icon>
-
-            <Box>
+        <Box $p={[1]} >
+            <SemanticButton $variant={variantProps.secondary} className={menuItemContainerClassName} onClick={() => handleMenuItemClick(path)}>
                 <TextSmall>
                     {name}
                 </TextSmall>
-            </Box>
-        </Button>
+            </SemanticButton>
+        </Box>
     );
 };
 
