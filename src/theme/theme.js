@@ -56,7 +56,7 @@ const theme = createTheme({
         text: {
             disabled: "rgba(255, 255, 255, 0.5)",
             icon: "rgba(255, 255, 255, 0.5)",
-            primary: "#fff4f5",
+            primary: "#2d3240",
             secondary: "#f6f9ff",
             success: "#2d3240",
             warning: "#fff",

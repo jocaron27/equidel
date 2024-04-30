@@ -1,12 +1,12 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Box, SemanticButton, TextSmall, variantProps } from '../styled';
+import { TextSmall, variantProps } from '../styled';
+import { MenuHoverLine, MenuItemButton, MenuItemContainer } from './menuStyledComponents';
 
 function MenuItem({name, path, callback}) {
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const isActive = pathname === path;
-    const menuItemContainerClassName = isActive ? 'menu-item-container-active' : 'menu-item-container';
 
     const handleMenuItemClick = path => {
         navigate(path);
@@ -15,13 +15,15 @@ function MenuItem({name, path, callback}) {
     };
 
     return (
-        <Box $p={[1]} >
-            <SemanticButton $variant={variantProps.secondary} className={menuItemContainerClassName} onClick={() => handleMenuItemClick(path)}>
+        <MenuItemContainer $p={[1]} >
+            <MenuItemButton isActive={isActive} $variant={variantProps.secondary} onClick={() => handleMenuItemClick(path)}>
                 <TextSmall>
                     {name}
                 </TextSmall>
-            </SemanticButton>
-        </Box>
+            </MenuItemButton>
+
+            <MenuHoverLine isActive={isActive} />
+        </MenuItemContainer>
     );
 };
 
