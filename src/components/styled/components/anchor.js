@@ -3,7 +3,7 @@ import { theme } from '../../../theme';
 
 export const Anchor = styled.a`
   color: ${theme.palette.text.link};
-  :hover {
+  &:hover {
     text-decoration: underline;
   }
 `;

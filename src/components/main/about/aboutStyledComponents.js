@@ -6,5 +6,5 @@ const AboutContainer = styled(Box)`
 `;
 
 export {
-  AboutContainer
+  AboutContainer,
 };

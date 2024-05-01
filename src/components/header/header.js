@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { getRouteByPathname } from '../../routes/routesUtils';
 import { HeaderContainer, HorizontalLine } from './headerStyledComponents';
 import { useMediaQuery } from '../../hooks';
-import { FlexBox, FlexBoxColumn, SubTitle, Text, Title, TitleSmall, cardProps } from '../styled';
+import { Box, FlexBox, FlexBoxColumn, SubTitle, Text, Title, TitleSmall, cardProps } from '../styled';
 import { Menu } from '../menu';
 
 function Header() {
@@ -12,6 +12,7 @@ function Header() {
     const { name: pageTitle } = getRouteByPathname(pathname);
     const headerContainerPadding = isDesktop ? [5, 8] : [2];
     const titleContainerPadding = isDesktop ? [20, 0] : [10, 2];
+    const pageTitleContainerPadding = isDesktop ? [0, 40] : [0];
 
     return (
         <HeaderContainer $variant={cardProps.variant.background} $p={headerContainerPadding}>
@@ -26,8 +27,10 @@ function Header() {
                 <SubTitle>By Robert Caron</SubTitle>
             </FlexBoxColumn>
 
-            <TitleSmall>{pageTitle}</TitleSmall>
-            <HorizontalLine />
+            <Box $p={pageTitleContainerPadding}>
+              <TitleSmall>{pageTitle}</TitleSmall>
+              <HorizontalLine />
+            </Box>
         </HeaderContainer>
     );
 };
