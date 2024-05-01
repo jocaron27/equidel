@@ -1,25 +1,17 @@
 import React from 'react';
-import { Anchor, Box, FlexBox, FlexBoxColumn, Image, Text, TitleSmall } from '../../styled';
-import { AboutContainer, QuoteContainer } from './aboutStyledComponents';
+import { Anchor, Box, FlexBox, Text, TitleSmall } from '../../styled';
+import { AboutContainer } from './aboutStyledComponents';
 import { Quote } from '../../custom/quote';
-import { useMediaQuery } from '../../../hooks';
 
 function About() {
-
-  const { isDesktop } = useMediaQuery();
-  const ImageContainer = isDesktop ? FlexBox : FlexBoxColumn;
-
   return (
     <FlexBox $center $p={[0, 5]}>
         <AboutContainer>
-            <ImageContainer $itemsPerRow={2} $m={[0, 0, 8, 0]} $center>
-              <Image src="https://cdn.dribbble.com/users/917599/screenshots/17754467/media/8c31faa7c818b7312baa1652bd39f67c.png?resize=1600x1200&vertical=center" width={200}/>
-              <QuoteContainer $m={[5]} isDesktop={isDesktop}>
-                <Quote author="Leonardo da Vinci">"The artist sees what others only catch a glimpse of." </Quote>
-              </QuoteContainer>
-            </ImageContainer>
+            <Quote author="The Gallery Shop" image="./assets/about_photo.jpeg" imageWidth={200} borderWidth={875} borderHeight={360}>"Robert Caron is a traditional oil painter known for his photo realistic paintings full of vibrant colors. His sweeping nature scenes are both realistic and magical, giving one a sense of true outdoor scene combined with the feeling of something beautifully ephemeral." </Quote>
             
-            <Text>Since arriving on the professional scene in 2000, I’ve worked hard to capture and intrigue the art community. I gather much of my inspiration from personal experiences, the environment and cultures around the world. Even though I create primarily for myself, my work has been well received by buyers and critics alike; a fact I don’t take lightly. If you would like to talk about working together, or if you have a specific project you would like to propose, please do not hesitate to <Anchor href="/contact">contact me.</Anchor></Text>
+            <Box $p={[0, 0, 5, 0]}>
+              <Text>Since arriving on the professional scene in 2000, I’ve worked hard to capture and intrigue the art community. I gather much of my inspiration from personal experiences, the environment and cultures around the world. Even though I create primarily for myself, my work has been well received by buyers and critics alike; a fact I don’t take lightly. If you would like to talk about working together, or if you have a specific project you would like to propose, please do not hesitate to <Anchor href="/contact">contact me.</Anchor></Text>
+            </Box>
             
             <Box $p={[5, 0]}>
               <TitleSmall>My passion</TitleSmall>

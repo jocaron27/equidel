@@ -32,8 +32,8 @@ function Portfolio() {
             <Button onClick={toggleModal}>Gallery item</Button>
 
             <Box $m={[5]}>
-                <Quote author="The Gallery Shop">"Robert Caron is a traditional oil painter known for his photo realistic paintings full of vibrant colors. His sweeping nature scenes are both realistic and magical, giving one a sense of true outdoor scene combined with the feeling of something beautifully ephemeral." </Quote>
-              </Box>
+              <Quote author="Leonardo da Vinci" image="./assets/paint.jpeg" imageWidth={550} borderWidth={830} borderHeight={355}>"The artist sees what others only catch a glimpse of." </Quote>
+            </Box>
           </PorfolioContainer>
         </FlexBox>
     );
