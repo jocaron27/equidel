@@ -32,7 +32,7 @@ function Portfolio() {
             <Button onClick={toggleModal}>Gallery item</Button>
 
             <Box $m={[5]}>
-              <Quote author="Leonardo da Vinci" image="./assets/paint.jpeg" imageWidth={550} borderWidth={830} borderHeight={355}>"The artist sees what others only catch a glimpse of." </Quote>
+              <Quote author="Leonardo da Vinci" image="https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/paint.jpeg" imageWidth={550} borderWidth={830} borderHeight={355}>"The artist sees what others only catch a glimpse of." </Quote>
             </Box>
           </PorfolioContainer>
         </FlexBox>
