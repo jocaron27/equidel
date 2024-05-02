@@ -1,14 +1,12 @@
 import styled from "styled-components";
-import { Box, TitleSmall } from "../../styled";
+import { Box, Image, TitleSmall } from "../../styled";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 const QuoteBorderOverlay = styled(Box)`
-  border: 1px black solid;
   border-radius: 2px;
-  ${({theme}) => `outline: 1px solid ${theme.palette.background.main}`};
-  position: absolute;
-  ${({borderWidth}) => `width: ${borderWidth}px`};
-  ${({borderHeight}) => `height: ${borderHeight}px`};
+  ${({theme}) => `border: 4px solid ${theme.palette.background.dark}`};
+  ${({width}) => `width: ${width}px`};
+  ${({height}) => `height: ${height}px`};
 `;
 
 const AuthorText = styled(TitleSmall)`
@@ -21,8 +19,13 @@ const QuoteIcon = styled(FormatQuoteIcon)`
     ${({theme}) => `color: ${theme.palette.text.secondary}`};
 `;
 
+const QuoteImage = styled(Image)`
+  max-width: 100%;
+`
+
 export {
   QuoteBorderOverlay,
   AuthorText,
   QuoteIcon,
+  QuoteImage,
 };

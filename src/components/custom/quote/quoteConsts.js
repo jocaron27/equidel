@@ -1,0 +1,1 @@
+export const OVERLAY_BORDER_MARGIN = 40;

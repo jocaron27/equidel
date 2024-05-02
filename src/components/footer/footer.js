@@ -9,7 +9,8 @@ import { Icon } from '@mui/material';
 
 function Footer() {
     const { isDesktop } = useMediaQuery();
-    const footerContainerPadding = isDesktop ? [5, 8] : [2];
+    const footerContainerPadding = isDesktop ? [40, 8, 5, 8] : [2];
+    const contactItemPadding = isDesktop ? [0] : [2];
     const iconSpacing = [0, 1];
 
     const FooterMenuContainer = isDesktop ? FlexBox : FlexBoxColumn;
@@ -20,14 +21,14 @@ function Footer() {
             <Title>to me</Title>
 
             <FooterMenuContainer $itemsPerRow={3} $p={[10, 0, 0, 0]}>
-                <FlexBoxColumn>
+                <FlexBoxColumn $p={contactItemPadding}>
                     <TitleSmall>Email</TitleSmall>
                     <Anchor href="mailto:equidelart@gmail.com">
                         <Text>equidelart@gmail.com</Text>
                     </Anchor>
                 </FlexBoxColumn>
 
-                <FlexBox $center={isDesktop}>
+                <FlexBox $center={isDesktop} $p={contactItemPadding}>
                     <FlexBoxColumn>
                         <TitleSmall>Phone</TitleSmall>
                         <Anchor href="tel:301-859-0721">
@@ -36,7 +37,7 @@ function Footer() {
                     </FlexBoxColumn>
                 </FlexBox>
 
-                <SocialIconContainer $isDesktop={isDesktop}>
+                <SocialIconContainer $isDesktop={isDesktop} $p={contactItemPadding}>
                     <Box $p={iconSpacing}>
                         <Anchor href="https://www.instagram.com/equidelart/" target="_blank">
                             <Icon component={InstagramIcon} />
@@ -58,7 +59,7 @@ function Footer() {
             </FooterMenuContainer>
 
             <FlexBox $center $p={[20, 0, 0, 0]}>
-              <Text>©2020 by Equidel Art</Text>
+              <Text>©2024 by Equidel Art</Text>
             </FlexBox>
         </FooterContainer>
     );
