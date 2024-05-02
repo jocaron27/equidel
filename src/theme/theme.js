@@ -38,7 +38,7 @@ const theme = createTheme({
             main: "#e1e3e9",
             light: "#f3f3f3",
             medium: "#e1e3e9",
-            dark: "#2d3240",
+            dark: "#d6cece",
             paper: "#2d3240"
         },
         backgroundLight: {

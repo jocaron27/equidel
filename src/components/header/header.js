@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { getRouteByPathname } from '../../routes/routesUtils';
-import { HeaderContainer, HorizontalLine } from './headerStyledComponents';
+import { HeaderContainer, HorizontalLine, HeaderTitle } from './headerStyledComponents';
 import { useMediaQuery } from '../../hooks';
 import { Box, FlexBox, FlexBoxColumn, SubTitle, Text, Title, TitleSmall, cardProps } from '../styled';
 import { Menu } from '../menu';
@@ -22,7 +22,7 @@ function Header() {
             </FlexBox>
 
             <FlexBoxColumn $p={titleContainerPadding} $center>
-                <Title>Equidel Art</Title>
+                <HeaderTitle>Equidel Art</HeaderTitle>
 
                 <SubTitle>By Robert Caron</SubTitle>
             </FlexBoxColumn>

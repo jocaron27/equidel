@@ -7,7 +7,7 @@ function About() {
   return (
     <FlexBox $center $p={[0, 5]}>
         <AboutContainer>
-            <Quote author="The Gallery Shop" image="https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/about_photo.jpeg" imageWidth={200} borderWidth={875} borderHeight={360}>"Robert Caron is a traditional oil painter known for his photo realistic paintings full of vibrant colors. His sweeping nature scenes are both realistic and magical, giving one a sense of true outdoor scene combined with the feeling of something beautifully ephemeral." </Quote>
+            <Quote author="The Gallery Shop" image="https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/about_photo.jpeg" imageWidth={200}>"Robert Caron is a traditional oil painter known for his photo realistic paintings full of vibrant colors. His sweeping nature scenes are both realistic and magical, giving one a sense of true outdoor scene combined with the feeling of something beautifully ephemeral." </Quote>
             
             <Box $p={[0, 0, 5, 0]}>
               <Text>Since arriving on the professional scene in 2000, I’ve worked hard to capture and intrigue the art community. I gather much of my inspiration from personal experiences, the environment and cultures around the world. Even though I create primarily for myself, my work has been well received by buyers and critics alike; a fact I don’t take lightly. If you would like to talk about working together, or if you have a specific project you would like to propose, please do not hesitate to <Anchor href="/contact">contact me.</Anchor></Text>

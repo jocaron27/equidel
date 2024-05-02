@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Box, Card } from "../styled";
+import { Box, Card, Title } from "../styled";
 
 const HeaderContainer = styled(Card)`
 `;
@@ -13,7 +13,12 @@ const HorizontalLine = styled(Box)`
     border-bottom-width: 2px;
 `;
 
+const HeaderTitle = styled(Title)`
+  text-align: center;
+`
+
 export {
     HeaderContainer,
-    HorizontalLine
+    HorizontalLine,
+    HeaderTitle,
 };
