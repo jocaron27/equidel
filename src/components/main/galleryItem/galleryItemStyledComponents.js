@@ -28,6 +28,7 @@ const GalleryImage = styled(Card)`
 
 const ModalImage = styled(Image)`
   max-width: 100%;
+  max-height: calc(100vh - 150px);
 `;
 
 const ImageCaptionContainer = styled(FlexBox)`
