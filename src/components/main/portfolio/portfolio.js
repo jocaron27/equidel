@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { DataContext } from '../../../context';
 import 'react-responsive-modal/styles.css';
 import { Anchor, Box, FlexBox, Grid, Text } from '../../styled';
-import { PorfolioContainer } from './portfolioStyledComponents';
+import { HorizontalLine, PorfolioContainer } from './portfolioStyledComponents';
 import { Quote } from '../../custom/quote';
 import { GalleryItem } from '../galleryItem';
 import { theme } from '../../../theme';
@@ -34,6 +34,8 @@ function Portfolio() {
                 />
               ))}
             </Grid>
+
+            <HorizontalLine />
 
             <Box $m={[5]}>
               <Quote author="Leonardo da Vinci" image="https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/paint.jpeg" imageWidth={550}>"The artist sees what others only catch a glimpse of." </Quote>
