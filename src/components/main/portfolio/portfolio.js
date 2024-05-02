@@ -13,7 +13,7 @@ function Portfolio() {
     const { isDesktop } = useMediaQuery();
     const portfolioPadding = isDesktop ? [0] : [0, 5];
     const portfolioMargin = isDesktop ? [10, 0] : [0];
-    const gridGap = isDesktop ? theme.spacing(12) : 0;
+    const gridGap = isDesktop ? theme.spacing(12) : theme.spacing(5);
     const gridMargin = isDesktop ? [20, 0] : [0];
 
     return (

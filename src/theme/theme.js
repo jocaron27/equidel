@@ -113,6 +113,11 @@ const theme = createTheme({
             fontWeight: '400',
             textTransform: 'uppercase'
         },
+        h4: {
+            fontFamily: 'Roboto Condensed',
+            fontSize: '2rem',
+            fontWeight: '400',
+        }
     },
     zIndex: {
       fab: 999,

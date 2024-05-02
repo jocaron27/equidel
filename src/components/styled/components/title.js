@@ -14,6 +14,10 @@ export const TitleSmall = styled.h3`
     ${(props) => buildTypography(props, typographyProps.h3)}
 `;
 
+export const TitleXSmall = styled.h4`
+    ${(props) => buildTypography(props, typographyProps.h4)}
+`;
+
 export const SubTitle = styled.b`
     ${(props) => buildTypography(props, typographyProps.subtitle1)}
 `;
