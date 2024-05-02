@@ -3,6 +3,8 @@ import { Modal } from 'react-responsive-modal';
 import { Box, FlexBoxColumn, Text, TextCaption } from '../../styled';
 import { GalleryItemContainer, GalleryImage, OverlayContainer, ImageCaptionContainer, ModalImage } from './galleryItemStyledComponents';
 import { Overlay } from '../../common';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Icon } from '@mui/material';
 
 function GalleryItem({
   imageName,
@@ -26,12 +28,14 @@ function GalleryItem({
 
     const OverlayComponent = () => overlayVisible && !modalOpen ? (
       <OverlayContainer onClick={() => setModalOpen(true)}>
+        <FlexBoxColumn $p={[3]} $center>
           <Text>{imageName}</Text>
           <TextCaption>{imageSize}</TextCaption>
           <TextCaption>{imageMedium}</TextCaption>
           <Box $m={[10, 0, 0, 0]}>
-            <Text>Click to open in full size</Text>
+            <Icon component={OpenInNewIcon}/>
           </Box>
+        </FlexBoxColumn>
       </OverlayContainer>
     ) : null;
 
