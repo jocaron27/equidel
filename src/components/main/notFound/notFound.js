@@ -1,11 +1,18 @@
 import React from 'react';
-import { Box } from '../../styled';
+import { Box, Button, FlexBoxColumn, Text } from '../../styled';
 
 function NotFound() {
+    const navigateHome = () => window.location.assign('/');
+
     return (
-        <Box>
-            Oops, looks like you might have the wrong link
-        </Box>
+        <FlexBoxColumn $center>
+            <Box $m={[5]}>
+              <Text>Oops, looks like this page is unavailable</Text>
+            </Box>
+            <Button onClick={navigateHome}>
+              Take me to the gallery
+            </Button>
+        </FlexBoxColumn>
     );
 };
 

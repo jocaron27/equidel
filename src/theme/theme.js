@@ -39,7 +39,8 @@ const theme = createTheme({
             light: "#f3f3f3",
             medium: "#e1e3e9",
             dark: "#d6cece",
-            paper: "#2d3240"
+            paper: "#2d3240",
+            overlay: "rgb(45, 50, 64, 0.7)",
         },
         backgroundLight: {
             main: "#f3f3f3",
@@ -64,6 +65,7 @@ const theme = createTheme({
             info: "#fff",
             background: "#2d3240",
             backgroundLight: "#2d3240",
+            overlay: "#fff",
             link: "#8f65d8"
         },
     },
@@ -111,6 +113,10 @@ const theme = createTheme({
             fontWeight: '400',
             textTransform: 'uppercase'
         },
+    },
+    zIndex: {
+      fab: 999,
+      modal: 1000,
     },
     spacing: 4
 });

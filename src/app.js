@@ -17,7 +17,7 @@ function App() {
     const { fetchData } = useContext(DataContext);
     const { pathname } = useLocation();
     const route = getRouteByPathname(pathname);
-    const footerlessRoutes = ['Contact'];
+    const footerlessRoutes = ['Contact', 'Not Found'];
 
     useEffect(() => {
         fetchData();
