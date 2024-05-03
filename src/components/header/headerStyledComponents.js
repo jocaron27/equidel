@@ -1,7 +1,11 @@
 import styled from "styled-components";
-import { Box, Card, Title } from "../styled";
+import { Box, Card, Image, SubTitle, Text, Title } from "../styled";
 
 const HeaderContainer = styled(Card)`
+`;
+
+const Logo = styled(Text)`
+  letter-spacing: -3px;
 `;
 
 const HorizontalLine = styled(Box)`
@@ -15,10 +19,27 @@ const HorizontalLine = styled(Box)`
 
 const HeaderTitle = styled(Title)`
   text-align: center;
-`
+  font-size: 7em;
+`;
+
+const HeaderSubtitle = styled(SubTitle)`
+  font-size: 1.5em;
+`;
+
+const HeaderImageContainer = styled(Box)`
+  transform: rotate(-3deg);
+  ${({theme}) => `background: ${theme.palette.background.medium}`};
+`;
+
+const HeaderImage = styled(Image)`
+`;
 
 export {
     HeaderContainer,
+    Logo,
     HorizontalLine,
     HeaderTitle,
+    HeaderSubtitle,
+    HeaderImageContainer,
+    HeaderImage,
 };

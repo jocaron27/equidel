@@ -35,9 +35,9 @@ const theme = createTheme({
             main: "#2d3240"
         },
         background: {
-            main: "#e1e3e9",
+            main: "#ffffff",
             light: "#f3f3f3",
-            medium: "#e1e3e9",
+            medium: "#c4c4c4",
             dark: "#d6cece",
             paper: "#2d3240",
             overlay: "rgb(45, 50, 64, 0.7)",
