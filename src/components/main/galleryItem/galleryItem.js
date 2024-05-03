@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Modal } from 'react-responsive-modal';
 import { Box, FlexBoxColumn, Text, TextCaption } from '../../styled';
 import { GalleryItemContainer, GalleryImage, OverlayContainer, ImageCaptionContainer, ModalImage } from './galleryItemStyledComponents';
-import { Overlay } from '../../common';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Icon } from '@mui/material';
+import { Overlay } from '../../common';
 
 function GalleryItem({
   imageName,
@@ -16,6 +16,10 @@ function GalleryItem({
     const imageUrl = `https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/${fileName}`;
     const [modalOpen, setModalOpen] = useState(false);
     const [overlayVisible, setOverlayVisible] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+    const imageRef = useRef(null);
 
     const toggleOverlayVisibility = () => {
       setOverlayVisible(!overlayVisible);
@@ -33,19 +37,25 @@ function GalleryItem({
     };
 
     useEffect(() => {
-      if (modalOpen) {
-        setOverlayVisible(false);
-      }
+      setOverlayVisible(false);
     }, [modalOpen]);
 
     useEffect(() => {
       if (!modalOpen && currentImage && currentImage === fileName) {
         setModalOpen(true);
       }
-    }, [currentImage, fileName, setModalOpen]);
+    }, [modalOpen, currentImage, fileName, setModalOpen]);
+
+    useEffect(() => {
+      if (imageRef.current && imageLoaded) {
+        const {width, height}  = imageRef.current.getBoundingClientRect();
+        setWidth(width);
+        setHeight(height);
+      }
+    }, [imageLoaded]);
 
     const OverlayComponent = () => overlayVisible && !modalOpen ? (
-      <OverlayContainer onClick={() => {
+      <OverlayContainer overlayWidth={width} overlayHeight={height} onClick={() => {
         setModalOpen(true);
         addCurrentImageToUrl();
       }}>
@@ -66,7 +76,7 @@ function GalleryItem({
           onMouseLeave={toggleOverlayVisibility}
         >
           <Overlay overlayComponent={OverlayComponent}>
-            <GalleryImage imageUrl={imageUrl} /> 
+            <GalleryImage src={imageUrl} onLoad={() => setImageLoaded(true)} ref={imageRef} /> 
           </Overlay>
 
           <Modal open={modalOpen} onClose={() => {

@@ -1,20 +1,20 @@
 import React, { useContext, useState } from 'react';
 import { DataContext } from '../../../context';
 import 'react-responsive-modal/styles.css';
-import { Anchor, Box, FlexBox, Grid, Text } from '../../styled';
+import { Anchor, Box, FlexBox, FlexBoxColumn, Grid, Text } from '../../styled';
 import { HorizontalLine, PorfolioContainer } from './portfolioStyledComponents';
 import { Quote } from '../../custom/quote';
 import { GalleryItem } from '../galleryItem';
 import { theme } from '../../../theme';
 import { useMediaQuery } from '../../../hooks';
+import { GALLERY_ITEM_SIZE } from '../galleryItem/galleryItemConsts';
 
 function Portfolio() {
     const { data: gallery } = useContext(DataContext);
     const { isDesktop } = useMediaQuery();
     const portfolioPadding = isDesktop ? [0] : [0, 5];
     const portfolioMargin = isDesktop ? [10, 0] : [0];
-    const gridGap = isDesktop ? theme.spacing(12) : theme.spacing(5);
-    const gridMargin = isDesktop ? [20, 0] : [0];
+    const gridMargin = isDesktop ? [20, 0] : [10, 0];
 
     return (
         <FlexBox $center $m={portfolioMargin} $p={portfolioPadding}>
@@ -23,7 +23,7 @@ function Portfolio() {
               <Text>Welcome to my studio and gallery. One of my defining principles is conveying a sense of awe through the timeless medium of oil painting, establishing an open dialogue between form and emotion in all aspects of my artwork. Look through my work to see this in action, and <Anchor href="/contact">get in touch</Anchor> for more information. Some of my paintings can be seen at <Anchor href="https://www.garrettarts.org"  target="_blank">the Gallery Shop</Anchor> in Oakland, MD.</Text>
             </Box>
 
-            <Grid $itemSize={75} $gap={gridGap} $m={gridMargin} $center>
+            <Grid $itemSize={GALLERY_ITEM_SIZE} $gap={theme.spacing(15)} $m={gridMargin}>
               {gallery?.map((galleryItem) => (
                 <GalleryItem
                   key={galleryItem.id + galleryItem.fileName}
