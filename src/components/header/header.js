@@ -24,7 +24,7 @@ function Header() {
             <FlexBoxColumn $p={titleContainerPadding} $center>
                 <HeaderTitle>Equidel Art</HeaderTitle>
                 <HeaderImageContainer $p={[1.5]} $m={[-1]}>
-                  <HeaderImage src="https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/concerto.jpeg" width={400} />
+                  <HeaderImage src="https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/concerto.jpeg" width={isDesktop ? 400 : 300} />
                 </HeaderImageContainer>
                 <HeaderSubtitle>by Robert Caron</HeaderSubtitle>
             </FlexBoxColumn>
