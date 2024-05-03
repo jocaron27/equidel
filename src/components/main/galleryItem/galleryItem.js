@@ -5,6 +5,7 @@ import { GalleryItemContainer, GalleryImage, OverlayContainer, ImageCaptionConta
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Icon } from '@mui/material';
 import { Overlay } from '../../common';
+import { useSearchParams } from 'react-router-dom';
 
 function GalleryItem({
   imageName,
@@ -12,7 +13,6 @@ function GalleryItem({
   imageMedium,
   fileName,
 }) {
-    const currentImage = new URLSearchParams(window.location.search)?.get('image');
     const imageUrl = `https://cdn.jsdelivr.net/gh/jocaron27/equidel/public/assets/${fileName}`;
     const [modalOpen, setModalOpen] = useState(false);
     const [overlayVisible, setOverlayVisible] = useState(false);
@@ -20,20 +20,20 @@ function GalleryItem({
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const imageRef = useRef(null);
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const toggleOverlayVisibility = () => {
       setOverlayVisible(!overlayVisible);
     };
 
     const addCurrentImageToUrl = useCallback(() => {
-      const url = new URL(window.location.origin);
-      url.searchParams.set("image", fileName);
-      history.pushState({}, "", url);
+      setSearchParams({
+        image: fileName,
+      });
     }, [fileName]);
 
     const resetUrl = () => {
-      const url = new URL(window.location.origin);
-      history.pushState({}, "", url);
+      setSearchParams();
     };
 
     useEffect(() => {
@@ -41,10 +41,10 @@ function GalleryItem({
     }, [modalOpen]);
 
     useEffect(() => {
-      if (!modalOpen && currentImage && currentImage === fileName) {
+      if (!modalOpen && searchParams.get('image') === fileName) {
         setModalOpen(true);
       }
-    }, [modalOpen, currentImage, fileName, setModalOpen]);
+    }, [modalOpen, fileName, setModalOpen]);
 
     useEffect(() => {
       if (imageRef.current && imageLoaded) {
