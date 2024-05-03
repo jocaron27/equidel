@@ -1,29 +1,27 @@
 import styled from "styled-components";
-import { Box, Card, FlexBox, FlexBoxColumn, Image } from "../../styled";
+import { FlexBox, FlexBoxColumn, Image } from "../../styled";
+import { GALLERY_ITEM_SIZE } from "./galleryItemConsts";
 
-const GalleryItemContainer = styled(Box)`
-  width: ${({theme}) => theme.spacing(75)};
-  height: ${({theme}) => theme.spacing(75)};
+const GalleryItemContainer = styled(FlexBox)`
+  width: ${({theme}) => theme.spacing(GALLERY_ITEM_SIZE)};
+  height: ${({theme}) => theme.spacing(GALLERY_ITEM_SIZE)};
   cursor: pointer;
+  justify-content: center;
 `;
 
 const OverlayContainer = styled(FlexBoxColumn)`
-  width: ${({theme}) => theme.spacing(75)};
-  height: ${({theme}) => theme.spacing(75)};
+  width: ${({overlayWidth}) => overlayWidth}px;
+  height: ${({overlayHeight}) => overlayHeight}px;
   background: ${({theme}) => theme.palette.background.overlay};
   color: ${({theme}) => theme.palette.text.overlay};
   justify-content: center;
   align-items: center;
 `;
 
-const GalleryImage = styled(Card)`
-  background-color: ${({theme}) => theme.palette.background.main};
-  background-image: ${({imageUrl}) => `url(${imageUrl})`};
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: ${({theme}) => theme.spacing(75)};
-  height: ${({theme}) => theme.spacing(75)};
+const GalleryImage = styled(Image)`
+  max-width: ${({theme}) => theme.spacing(GALLERY_ITEM_SIZE)};
+  max-height: ${({theme}) => theme.spacing(GALLERY_ITEM_SIZE)};
+  object-fit: contain;
 `;
 
 const ModalImage = styled(Image)`
